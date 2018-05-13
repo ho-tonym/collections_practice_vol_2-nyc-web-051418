@@ -86,13 +86,13 @@ def merge_data(keys, data)
 end
 
 def find_cool(args)
-
-
+  result = []
   args.each do |person|
     if person[:temperature] == "cool"
-       person
+      result << person
     end
   end
+  result
 end
 
 def organize_schools(schools)
