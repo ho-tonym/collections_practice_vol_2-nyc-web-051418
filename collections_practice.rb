@@ -99,13 +99,14 @@ def organize_schools(schools)
   new_hash = Hash.new
   locations = schools.values
   names = schools.keys
-  city = []
-  locations.each do |location|
-    city << location[:location]
+
+  city = locations.each do |location|
+     location[:location]
   end
+
   lookup = city.uniq
   lookup.each do |place|
-    group = []
+    group = Array.new
     i = 0
       while i < city.length
         if city[i] == place
