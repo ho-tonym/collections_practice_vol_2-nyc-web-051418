@@ -87,7 +87,8 @@ end
 
 def find_cool(args)
 
-  new_array = args.map do |person|
+
+  args.each do |person|
     if person[:temperature] == "cool"
        person
     end
