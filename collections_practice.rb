@@ -86,12 +86,14 @@ def merge_data(keys, data)
 end
 
 def find_cool(argument)
-
+  new_array = Array.new
+  
   argument.map do |person|
     if person[:temperature] == "cool"
-       new_array = new_array[person]
+      new_array << person
     end
   end
+  new_array
 end
 
 def organize_schools(schools)
