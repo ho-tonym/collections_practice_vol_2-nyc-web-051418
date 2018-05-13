@@ -108,7 +108,7 @@ def organize_schools(schools)
   lookup.each do |place|
     group = Array.new
     i = 0
-      unless i >= city.length
+      until i > city.length
         if city[i] == place
           group << names[i]
         end
