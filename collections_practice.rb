@@ -96,7 +96,7 @@ def find_cool(argument)
 end
 
 def organize_schools(schools)
-  new_hash = {}
+  new_hash = Hash.new
   locations = schools.values
   names = schools.keys
   city = []
