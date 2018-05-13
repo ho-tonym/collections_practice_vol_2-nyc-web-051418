@@ -100,7 +100,7 @@ def organize_schools(schools)
   locations = schools.values
   names = schools.keys
 
-  city = locations.each do |location|
+  city = locations.map do |location|
      location[:location]
   end
 
