@@ -42,6 +42,7 @@ def count_elements(array)
 counts
 end
 
+
 def count_elements(args)
   names = []
   count = []
@@ -49,68 +50,39 @@ def count_elements(args)
     duplicates = names.any? do |name|
       name == person[:name]
     end
+    
     if duplicates == true
       position = names.index(person[:name])
       count[position] += 1
     else
       names << person[:name]
-      count << 1 
+      count << 1
     end
+    
   end
+  
   result = []
-  i = 0 
-  while i < names.length 
+  i = 0
+  
+  while i < names.length
     result[i] = {
       name: names[i],
       count: count[i]
     }
-    i += 1 
-  end 
-  result 
-  # binding.pry
+    i += 1
+  end
+  result
 end
-
-# describe '#merge_data' do
-#   # Question 6
-#   it 'combines two nested data structures into one' do
-#     expect(merge_data(keys, data)).to eq(merged_data)
-#   end
-# end
-#
-# let(:merged_data) {
-#     [
-#           {
-#             :first_name => "blake",
-#             :awesomeness => 10,
-#                 :height => "74",
-#               :last_name => "johnson"
-#         },
-#           {
-#             :first_name => "ashley",
-#             :awesomeness => 9,
-#                 :height => 60,
-#               :last_name => "dubs"
-#         }
-#     ]
-#   }
 
 def merge_data(keys, data)
-  i = 0 
-  result = []
-  while i < keys.length
-    result[i] = keys[i].merge(data[0].values[i])
-    i += 1 
-  end 
-  result
-  # binding.pry
-end
+  
+  i = 0
 
-# describe '#find_cool' do
-#   # Question 7
-#   it 'find all cool hashes' do
-#     expect(find_cool(cool)).to eq([{:name => "blake",:temperature => "cool"}])
-#   end
-# end
+  result = while i < keys.length
+    result[i] = keys[i].merge(data[0].values[i])
+    i += 1
+  end
+end
 
 def find_cool(args)
   result = []
@@ -120,23 +92,9 @@ def find_cool(args)
     end
   end
   result
-  # binding.pry
 end
 
-# describe '#organize_schools' do
-#   # Question 8
-#   it 'organizes the schools by location' do
-#     expect(organize_schools(schools)).to eq(organized_schools)
-#   end
-# end
-# let(:organized_schools) {
-#     {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"],
-#     "SF"=>["dev boot camp", "Hack Reactor"],
-#     "Chicago"=>["dev boot camp chicago"]}
-# }
-
-
-def organize_schools(schools) 
+def organize_schools(schools)
   new_hash = {}
   locations = schools.values
   names = schools.keys
@@ -145,22 +103,16 @@ def organize_schools(schools)
     city << location[:location]
   end
   lookup = city.uniq
-  lookup.each do |place| 
+  lookup.each do |place|
     group = []
-    i = 0 
+    i = 0
       while i < city.length
         if city[i] == place
           group << names[i]
         end
-        i += 1 
-      end  
+        i += 1
+      end
       new_hash[place] = group
   end
   new_hash
 end
-
-
-
-
-
-
