@@ -44,13 +44,13 @@ end
 
 
 def count_elements(args)
-  names = []
-  count = []
+  names = Array.new
+  count = Array.new
   args.each do |person|
     duplicates = names.any? do |name|
       name == person[:name]
     end
-    
+
     if duplicates == true
       position = names.index(person[:name])
       count[position] += 1
@@ -58,12 +58,12 @@ def count_elements(args)
       names << person[:name]
       count << 1
     end
-    
+
   end
-  
-  result = []
+
+  result = Array.new
   i = 0
-  
+
   while i < names.length
     result[i] = {
       name: names[i],
@@ -75,23 +75,23 @@ def count_elements(args)
 end
 
 def merge_data(keys, data)
-  
-  i = 0
 
-  result = while i < keys.length
+  i = 0
+  result = Array.new
+  while i < keys.length
     result[i] = keys[i].merge(data[0].values[i])
     i += 1
   end
+  result
 end
 
 def find_cool(args)
-  result = []
-  args.each do |person|
+
+  new_array=args.map do |person|
     if person[:temperature] == "cool"
       result << person
     end
   end
-  result
 end
 
 def organize_schools(schools)
