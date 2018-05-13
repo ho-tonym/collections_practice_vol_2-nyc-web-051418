@@ -85,9 +85,9 @@ def merge_data(keys, data)
   result
 end
 
-def find_cool(args)
-  result = []
-  args.each do |person|
+def find_cool(argument)
+  result = Array.new
+  argument.each do |person|
     if person[:temperature] == "cool"
       result << person
     end
